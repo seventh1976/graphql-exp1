@@ -61,3 +61,7 @@ const BlogQueryRootType = new GraphQLObjectType({
     }
   })
 });
+
+const BlogAppSchema = new GraphQLSchema({
+  query: BlogQueryRootType
+});
