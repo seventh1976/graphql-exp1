@@ -2,7 +2,7 @@ const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const schema = require('./src/schema.js');
 
-let post = 3000;
+let port = 3000;
 const app = express();
 
 app.use('/', graphqlHTTP({
