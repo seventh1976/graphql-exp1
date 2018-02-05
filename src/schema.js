@@ -39,3 +39,25 @@ const PostType = new GraphQLObjectType({
     }
   })
 });
+
+// This is the Root Query
+const BlogQueryRootType = new GraphQLObjectType({
+  name: 'BlogAppSchema',
+  description: "Blog Application Schema Query Root",
+  fields: () => ({
+    authors: {
+      type:new GraphQLList(AuthorType),
+      description: "List of all Authors",
+      resolve: function() {
+        return Authors
+      }
+    },
+    posts: {
+      type: new GraphQLList(PostType),
+      description: "List of all Posts",
+      resolve: function() {
+        return Posts
+      }
+    }
+  })
+});
